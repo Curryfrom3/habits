@@ -1,1 +1,1 @@
-web: gunicorn habits_project.wsgi.application
+web: gunicorn habits_project.wsgi
