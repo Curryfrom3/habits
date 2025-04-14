@@ -21,7 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Replacing it with this
 SECRET_KEY = os.getenv('SECRET_KEY')
-DEBUG = True
+
+if not 'ON_HEROKU' in os.environ:
+    DEBUG = True
+
 
 ALLOWED_HOSTS = ["*"]
 
