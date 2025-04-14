@@ -1,0 +1,20 @@
+<!-- main_app/templates/habits/detail.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Habit Detail</title>
+  <link rel="stylesheet" href="{% static 'main_app/css/style.css' %}">
+</head>
+<body>
+  {% include 'partials/navbar.html' %}
+  <h1>{{ habit.name }}</h1>
+  <p>{{ habit.description }}</p>
+  <p>Started on: {{ habit.start_date }}</p>
+
+  <a href="{% url 'habit_update' habit.id %}">Edit</a> |
+  <a href="{% url 'habit_delete' habit.id %}">Delete</a> |
+  <a href="{% url 'index' %}">Back to All Habits</a>
+</body>
+</html>

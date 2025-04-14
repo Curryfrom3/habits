@@ -3,8 +3,11 @@
 <html>
 <head>
   <title>Habit Tracker</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main_app/css/style.css' %}">  
 </head>
 <body>
+  {% include 'partials/navbar.html' %}
   <h1>Welcome to the Habit Tracker!</h1>
 </body>
 </html>

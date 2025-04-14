@@ -1,0 +1,178 @@
+/* === Reset & Base === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  overflow-x: hidden;
+}
+
+/* === Color-changing animated background === */
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(173, 216, 230, 0.2),
+    rgba(173, 216, 230, 0.2) 20px,
+    rgba(221, 160, 221, 0.2) 20px,
+    rgba(221, 160, 221, 0.2) 40px
+  );
+  animation: bgShift 20s linear infinite;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+@keyframes bgShift {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(25%, 25%) rotate(360deg);
+  }
+}
+
+/* === Navbar === */
+nav.navbar {
+  background-color: #d1c4e9;
+  padding: 1em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #b39ddb;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a.nav-link {
+  margin-right: 1em;
+  color: #4a148c;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navbar a.nav-link:hover {
+  text-decoration: underline;
+}
+
+.navbar .welcome-msg {
+  margin-right: 1em;
+  color: #6a1b9a;
+}
+
+.nav-button,
+button {
+  background-color: #81d4fa;
+  color: #0d47a1;
+  padding: 0.6em 1em;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-button:hover,
+button:hover {
+  background-color: #4fc3f7;
+}
+
+.nav-button.signup {
+  background-color: #ce93d8;
+  color: #4a148c;
+}
+
+.nav-button.signup:hover {
+  background-color: #ba68c8;
+}
+
+/* === Card Layout for Habits === */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5em;
+  padding: 2em;
+}
+
+.card {
+  background-color: #f3e5f5;
+  border: 1px solid #ce93d8;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(155, 89, 182, 0.1);
+  padding: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card h3 a {
+  color: #6a1b9a;
+  text-decoration: none;
+}
+
+.card h3 a:hover {
+  text-decoration: underline;
+}
+
+.card p {
+  color: #5e5873;
+  font-size: 0.95em;
+}
+
+/* === Form Styling (Login, Signup, etc.) === */
+form {
+  padding: 2em;
+  background-color: #ffffffcc;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+}
+
+.form-page {
+  max-width: 600px;
+  margin: 3em auto;
+  padding: 2em;
+  background-color: #ffffffcc;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-page h1 {
+  margin-bottom: 1em;
+  text-align: center;
+  color: #4a148c;
+}
+
+.form-page p {
+  margin-top: 1em;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.8em;
+  margin: 0.5em 0 1em;
+  border: 1px solid #ce93d8;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #ab47bc;
+  box-shadow: 0 0 5px rgba(171, 71, 188, 0.3);
+}

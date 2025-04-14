@@ -1,0 +1,21 @@
+<!-- main_app/templates/habits/habit_confirm_delete.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Delete Habit</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main_app/css/style.css' %}">
+</head>
+<body>
+  {% include 'partials/navbar.html' %}
+  <h1>Delete Habit</h1>
+  <p>Are you sure you want to delete "{{ object.name }}"?</p>
+
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit">Yes, Delete</button>
+    <a href="{% url 'detail' object.id %}">Cancel</a>
+  </form>
+</body>
+</html>

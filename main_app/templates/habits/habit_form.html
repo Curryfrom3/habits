@@ -1,0 +1,22 @@
+<!-- main_app/templates/habits/habit_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add a New Habit</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main_app/css/style.css' %}">
+</head>
+<body>
+  {% include 'partials/navbar.html' %}
+  <h1>Add a New Habit</h1>
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Habit</button>
+  </form>
+
+  <p><a href="{% url 'index' %}">Cancel</a></p>
+</body>
+</html>

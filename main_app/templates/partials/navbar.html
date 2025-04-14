@@ -1,0 +1,21 @@
+<!-- main_app/templates/partials/navbar.html -->
+<nav class="navbar">
+  <div class="navbar-left">
+    <a href="{% url 'home' %}" class="nav-link">Home</a>
+    {% if user.is_authenticated %}
+      <a href="{% url 'index' %}" class="nav-link">My Habits</a>
+    {% endif %}
+  </div>
+  <div class="navbar-right">
+    {% if user.is_authenticated %}
+      <span class="welcome-msg">Hi, {{ user.username }}</span>
+      <form method="POST" action="{% url 'logout' %}" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit" class="nav-button">Log Out</button>
+      </form>
+    {% else %}
+      <a href="{% url 'login' %}" class="nav-button">Log In</a>
+      <a href="{% url 'signup' %}" class="nav-button signup">Sign Up</a>
+    {% endif %}
+  </div>
+</nav>
