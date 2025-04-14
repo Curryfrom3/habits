@@ -7,7 +7,7 @@ Daily Boost is a self-care tracker that helps users build and maintain positive 
 
 ## 🖼️ Screenshot
 
-![Daily Boost Screenshot](static/images/screenshot.png)
+![Daily Boost Screenshot]
 
 ---
 
@@ -24,11 +24,9 @@ This project was inspired by the importance of self-care and mindfulness. By off
 ## 🚀 Getting Started
 
 **Deployed App:**  
-👉 [https://daily-boost-app.onrender.com](https://daily-boost-app.onrender.com)
+
 
 **Planning Materials:**  
-📁 [Trello Board](https://trello.com/b/your-trello-board)  
-📄 [Wireframes and ERD](static/images/wireframes.png)
 
 ---
 
